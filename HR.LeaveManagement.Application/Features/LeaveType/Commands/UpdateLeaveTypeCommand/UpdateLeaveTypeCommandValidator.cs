@@ -32,7 +32,7 @@ namespace HR.LeaveManagement.Application.Features.LeaveType.Commands.UpdateLeave
             .WithMessage("Leave type already exists");
 
 
-            this._leaveTypeRepository = leaveTypeRepository;
+            _leaveTypeRepository = leaveTypeRepository;
         }
 
         private async Task<bool> LeaveTypeMustExist(int id, CancellationToken token)
