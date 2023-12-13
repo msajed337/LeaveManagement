@@ -12,7 +12,7 @@ namespace HR.LeaveManagement.Api.Controllers
 {
 	[Route("api/[controller]")]
 	[ApiController]
-	[Authorize]
+	//[Authorize]
 	public class LeaveAllocationsController : ControllerBase
 	{
 		private readonly IMediator _mediator;
@@ -63,7 +63,7 @@ namespace HR.LeaveManagement.Api.Controllers
 		[ProducesDefaultResponseType]
 		public async Task<ActionResult> Delete (int id)
 		{
-			var command = new DeleteLeaveAllocationCommand() { Id = id }
+			var command = new DeleteLeaveAllocationCommand() { Id = id };
 			await _mediator.Send(command);
 			return NoContent();
 		}
